@@ -40,12 +40,15 @@
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse navbar-expand-lg" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="#">Home</a>
       <a class="nav-item nav-link" href="#">Features</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
       <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      <span class="tools-element nav-item"><a class="nav-link" target="_blank" href="{{ site.github.repository_url }}/{{{page.folder}}{{url | remove: '.html' | append: ''}}/_edit">Edit</a></span>
+      <span class="tools-element"><a target="_blank" href="{{ site.github.repository_url }}/{{{page.folder}}{{url | remove: '.html' | append: ''}}/_history">History</a></span>
+      <span class="tools-element"><a target="_blank" href="{{ site.github.repository_url }}/{{{page.folder}}{{url | remove: '.html' | append: '.md'}}/">Source</a></span>
     </div>
   <form class="form-inline" method="GET" action="/search">
     <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
@@ -55,11 +58,7 @@
 </nav>
       <section>
       <div id="tools-buttons" style="width: 100%; text-align: right">
-        {{page.relative_path}}
-          <span class="tools-element"><a target="_blank" href="{{ site.github.repository_url }}/{{{page.folder}}{{url | remove: '.html' | append: ''}}/_edit">Edit</a></span>
-          <span class="tools-element"><a target="_blank" href="{{ site.github.repository_url }}/{{{page.folder}}{{url | remove: '.html' | append: ''}}/_history">History</a></span>
-          <span class="tools-element"><a target="_blank" href="{{ site.github.repository_url }}/{{{page.folder}}{{url | remove: '.html' | append: '.md'}}/">Source</a></span>
-      </div>
+        {{page.relative_path}}</div>
         
       <div id="toc"></div>
  
