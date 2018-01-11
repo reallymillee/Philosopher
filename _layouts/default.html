@@ -20,28 +20,13 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <a href="{{ '/' | relative_url }}"><img src="{{ site.logo_url }}">
-          <h1>Philosopher Wiki</h1>
-        </a>
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-        {% if site.github.is_user_page %}
-          <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-        {% endif %}
-
-      {% if site.custom_sidebar %}
-          {% include sidebar.html %}
-      {% endif %}
-        
-      </header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-       <a class="navbar-brand" href="#">Philosopher Wiki</a>
+       <a class="navbar-brand" href="{{ '/' | relative_url }}">Philosopher Wiki</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse navbar-expand-lg" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link" href="#">Home</a>
       <a class="nav-item nav-link" href="#">Features</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
