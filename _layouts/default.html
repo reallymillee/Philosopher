@@ -5,13 +5,7 @@
     {% capture url %}{% if lchar == "/" %}{{page.url}}index.html{% else %}{{ page.url | default: 'index.html' }}{% endif %}{% endcapture %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
-
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-    
+    <title>Philosopher Wiki</title>    
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="{{ '/assets/js/wiki-features.js' | relative_url }}"></script>
 
@@ -29,7 +23,7 @@
     <div class="wrapper">
       <header>
         <a href="{{ '/' | relative_url }}"><img src="{{ site.logo_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <h1>Philosopher Wiki</h1>
         </a>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
@@ -37,19 +31,29 @@
           <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
-        {% if site.show_downloads %}
-          <ul class="downloads">
-            <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-            <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-            <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-          </ul>
-        {% endif %}
-
       {% if site.custom_sidebar %}
           {% include sidebar.html %}
       {% endif %}
         
       </header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <a class="navbar-brand" href="#">Philosopher Wiki</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">Home</a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  <form class="form-inline" method="GET" action="/search">
+    <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  </div>
+</nav>
       <section>
       <div id="tools-buttons" style="width: 100%; text-align: right">
         {{page.relative_path}}
@@ -64,28 +68,6 @@
           {% endif %}
           <span class="tools-element"><a target="_blank" href="{{ site.github.repository_url }}/commits/{{site.git_branch}}{{{page.folder}}{{url | remove: '.html' | append: '.md'}}">History</a></span>
           <span class="tools-element"><a target="_blank" href="{{ site.github.repository_url }}/blob/{{site.git_branch}}{{{page.folder}}{{url | remove: '.html' | append: '.md'}}">Source</a></span>
-        {% endif %}
-        
-        {% if site.google_cse_token %}
-          <script>
-          (function() {
-            var cx = "{{site.google_cse_token}}";
-            var gcse = document.createElement('script');
-            gcse.type = 'text/javascript';
-            gcse.async = true;
-            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gcse, s);
-          })();
-          </script>
-          <gcse:search></gcse:search>
-        {% else %}
-          <form method="GET" action="{{ site.github.repository_url }}/search">
-            {% if site.use_github_wiki %}
-              <input type="hidden" name="type" value="Wikis">
-            {% endif %}
-            <input type="text" name="q" placeholder="Text to search"><input type="submit" value="Search">
-          </form>
         {% endif %}
       </div>
         
@@ -137,5 +119,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script>
+      $(function() {
+  $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+});
+    </script>
   </body>
 </html>
