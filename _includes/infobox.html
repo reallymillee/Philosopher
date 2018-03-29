@@ -56,7 +56,7 @@
             {% for i in partners %}
               {% capture partnerinfo %}{{ i }}{% endcapture %}
               {% assign info = partnerinfo | split: '/' %}
-              <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}
+              <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
             {% endfor %}
           </td>
         </tr>
