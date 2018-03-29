@@ -1,4 +1,4 @@
-<div class="col-sm-4" style="font-size:90%;">
+<div class="col-sm-4 order-1 order-sm-2" style="font-size:90%;">
   <table class="table table-bordered">
     <thead class="bg-info text-light text-center" style="font-size:initial">
       <tr>
@@ -16,7 +16,7 @@
       </tr>
       <tr>
         <td class="align-middle font-weight-bold">Born</td>
-        <td>{{ include.fullname }}<br>{{ include.birthdate | date: "%e %B %Y" }} (age {{ include.age }})<br>{{ include.birthplace }}</td>
+        <td>{{ include.fullname }}<br>{{ page.birthdate | date: "%e %B %Y" }} (age {{ include.age }})<br>{{ include.birthplace }}</td>
       </tr>
       {% if include.nationality %}
       <tr>
