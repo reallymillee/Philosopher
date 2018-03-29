@@ -7,7 +7,7 @@
     </thead>
     <tbody>
       <tr>
-        <td colspan="2"><img src="/img/carter-1.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="Carter"></td>
+        <td colspan="2"><img src="/img/{{ include.img }}.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="{{ include.name }}"></td>
       </tr>
       <tr>
       </tr>
@@ -49,29 +49,28 @@
       </tr>
       {% endif %}
       {% if include.partners %}
-      {% capture partnerlist %}
-      {{ include.partners }}
-      {% endcapture %}
-      <tr>
-        <td class="align-middle font-weight-bold">Partner(s)</td>
-        <td>
-          {% assign partners = partnerlist | split: ', ' %}
-          {{ partners }}
-          {% for i in partners %}
-            {% capture partnerinfo %}
-            {{ i }}
-            {% endcapture %}
-            {% assign info = partnerinfo | split: '/' %}
-            {% increment counter %}
-            <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}
-          {% endfor %}
-        </td>
-      </tr>
+        <tr>
+          <td class="align-middle font-weight-bold">Partner(s)</td>
+          <td>
+            {% assign partners = include.partners | split: ', ' %}
+            {% for i in partners %}
+              {% capture partnerinfo %}{{ i }}{% endcapture %}
+              {% assign info = partnerinfo | split: '/' %}
+              <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}
+            {% endfor %}
+          </td>
+        </tr>
       {% endif %}
       {% if include.children %}
+        {% assign children = include.children | split: ', ' %}
       <tr>
         <td class="align-middle font-weight-bold">Children</td>
-        <td>1, <a href="/maddox">Maddox Harrison</a></td>
+        <td>
+          {{ children | size }},
+          {% for child in children %}
+            <a href="/{{ child | slugify }}">{{ child }}</a>{% unless forloop.last %}<br>{% endunless %}
+          {% endfor %}
+      </td>
       </tr>
       {% endif %}
       {% if include.genres %}
