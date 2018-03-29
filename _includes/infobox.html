@@ -16,7 +16,7 @@
       </tr>
       <tr>
         <td class="align-middle font-weight-bold">Born</td>
-        <td>{{ fullname }}<br>{{ birthdate }} (age {{ age }})<br>{{ birthplace }}</td>
+        <td>{{ fullname }}<br>{{ birthdate | date: "%e %B %Y"}} (age {{ age }})<br>{{ birthplace }}</td>
       </tr>
       {% if nationality %}
       <tr>
