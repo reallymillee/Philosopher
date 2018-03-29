@@ -18,31 +18,31 @@
         <td class="align-middle font-weight-bold">Born</td>
         <td>{{ include.fullname }}<br>{{ include.birthdate | date: "%e %B %Y" }} (age {{ include.age }})<br>{{ include.birthplace }}</td>
       </tr>
-      {% if nationality %}
+      {% if include.nationality %}
       <tr>
         <td class="align-middle font-weight-bold">Nationality</td>
         <td>{{ include.nationality }}</td>
       </tr>
       {% endif %}
-      {% if residence %}
+      {% if include.residence %}
       <tr>
         <td class="align-middle font-weight-bold">Residence</td>
         <td>{{ include.residence}}</td>
       </tr>
       {% endif %}
-      {% if height %}
+      {% if include.height %}
       <tr>
         <td class="align-middle font-weight-bold">Height</td>
         <td>{{ include.height }}</td>
       </tr>
       {% endif %}
-      {% if occupation %}
+      {% if include.occupation %}
       <tr>
         <td class="align-middle font-weight-bold">Occupation</td>
         <td>{{ include.occupation }}</td>
       </tr>
       {% endif %}
-      {% if yearsactive %}
+      {% if include.yearsactive %}
       <tr>
         <td class="align-middle font-weight-bold">Years active</td>
         <td>{{ include.yearsactive }}</td>
@@ -58,7 +58,7 @@
         {% endfor %}
       </tr>
       {% endif %}
-      {% if children %}
+      {% if include.children %}
       <tr>
         <td class="align-middle font-weight-bold">Children</td>
         <td>1, <a href="/maddox">Maddox Harrison</a></td>
