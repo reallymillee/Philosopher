@@ -105,7 +105,6 @@
       <tr>
         <td class="align-middle font-weight-bold">Children</td>
         <td>
-          {{ children | size }},
           {% for child in children %}
             <a href="/{{ child | slugify }}">{{ child }}</a>{% unless forloop.last %}<br>{% endunless %}
           {% endfor %}
