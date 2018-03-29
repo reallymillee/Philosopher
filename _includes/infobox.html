@@ -49,10 +49,14 @@
       </tr>
       {% endif %}
       {% if include.partners %}
+      {% capture partnerlist %}
+      {{ include.partners }}
+      {% endcapture %}
       <tr>
         <td class="align-middle font-weight-bold">Partner(s)</td>
-        <td>{{ include.partners }}
-          {% assign partners = "{{ include.partners }}" | split: ', ' %}
+        <td>
+          {% assign partners = partnerlist | split: ', ' %}
+          {{ partners }}
           {% for i in partners %}
             {% assign partners[i].info = "{{ i }}" | split: '/' %}
             <a href="/{{ include.partners[i].info[0] | slugify}}">{{ include.partners[i].info[0] }}</a> {{ include.partners[i].info[1] }}
