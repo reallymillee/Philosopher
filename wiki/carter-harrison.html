@@ -3,13 +3,27 @@ layout: default
 ---
 
 <h1>Carter Harrison</h1>
-<h3>2004</h3><hr>
-{% include infobox.html name="Carter Harrison" img="carter-2" fullname="Carter James Harrison" birthdate="5/11/1987" age="17" birthplace="Baltimore, Maryland" nationality="American" residence="Baltimore, Maryland" height="6 ft 2 in (1.89 m)" occupation="Student, unemployed" family="Thomas Harrison/father, Lizzie Harrison/mother, Ashley Harrison/(younger sister), Daniel Harrison/(younger brother), Olivia Harrison/(younger sister), Lilly Harrison/(younger sister)" relations="Matthew Everett/(best friend; deceased)" partners="Rachel Barns/(2003-present)" children="Maddox Harrison" %}
-<p>
-  Carter James Harrison (born 5 December 1987) is an American from Baltimore, Maryland.
-</p><br><br>
-<h3>2012</h3><hr>
-{% include infobox.html name="Carter Harrison" img="carter-1" fullname="Carter James Harrison" birthdate="5/11/1987" age="25" birthplace="Baltimore, Maryland" nationality="American" residence="Baltimore, Maryland" height="6 ft 2 in (1.89 m)" occupation="Singer, songwriter" yearsactive="2008-present" partners="Jon Harthford/(2007-present)" children="Maddox Harrison" genres="Pop, rock" instruments="Vocals" acts="Pocket of Authority" %}
-<p>
-  Carter James "Philosopher" Harrison (born 5 December 1987) is an American lead vocalist and songwriter from Baltimore, Maryland.
-</p>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="2004-tab" data-toggle="tab" href="#2004" role="tab">2004</a>
+    <a class="nav-item nav-link" id="2012-tab" data-toggle="tab" href="#2012" role="tab">2012</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-2004" role="tabpanel">
+    <div class="col-sm-8">
+      <p>
+        Carter James Harrison (born 5 December 1987) is an American from Baltimore, Maryland.
+      </p>
+    </div>
+    {% include infobox.html name="Carter Harrison" img="carter-2" fullname="Carter James Harrison" birthdate="5/11/1987" age="17" birthplace="Baltimore, Maryland" nationality="American" residence="Baltimore, Maryland" height="6 ft 2 in (1.89 m)" occupation="Student, unemployed" family="Thomas Harrison/(father), Lizzie Harrison/(mother), Ashley Harrison/(younger sister), Daniel Harrison/(younger brother), Olivia Harrison/(younger sister), Lilly Harrison/(younger sister)" relations="Matthew Everett/(best friend; deceased)" partners="Rachel Barns/(2003-present)" children="Maddox Harrison" %}
+  </div>
+  <div class="tab-pane fade" id="nav-2012" role="tabpanel">
+    <div class="col-sm-8">
+      <p>
+      Carter James "Philosopher" Harrison (born 5 December 1987) is an American lead vocalist and songwriter from Baltimore, Maryland.
+      </p>
+    </div>
+    {% include infobox.html name="Carter Harrison" img="carter-1" fullname="Carter James Harrison" birthdate="5/11/1987" age="25" birthplace="Baltimore, Maryland" nationality="American" residence="Baltimore, Maryland" height="6 ft 2 in (1.89 m)" occupation="Singer, songwriter" yearsactive="2008-present" partners="Jon Harthford/(2007-present)" children="Maddox Harrison" genres="Pop, rock" instruments="Vocals" acts="Pocket of Authority" %}
+  </div>
+</div>
