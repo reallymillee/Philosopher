@@ -58,8 +58,11 @@
           {% assign partners = partnerlist | split: ', ' %}
           {{ partners }}
           {% for i in partners %}
-            {% assign partners[i].info = "{{ i }}" | split: '/' %}
-            <a href="/{{ include.partners[i].info[0] | slugify}}">{{ include.partners[i].info[0] }}</a> {{ include.partners[i].info[1] }}
+            {% capture partnerinfo %}
+            {{ i }}
+            {% endcapture %}
+            {% assign partners[i].info = partnerinfo | split: '/' %}
+            <a href="/{{ include.partners[{% increment counter %}].info[0] | slugify}}">{{ include.partners[{{ counter }}].info[0] }}</a> {{ include.partners[{{ counter }}].info[1] }}
           {% endfor %}
         </td>
       </tr>
