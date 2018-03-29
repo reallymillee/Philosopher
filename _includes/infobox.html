@@ -74,6 +74,7 @@
         <td>1, <a href="/maddox">Maddox Harrison</a></td>
       </tr>
       {% endif %}
+      {% if include.genres %}
       <tr class="bg-info text-light text-center">
         <th colspan="2">Musical Career</th>
       </tr>
@@ -84,11 +85,17 @@
       </tr>
       <tr>
         <td class="align-middle font-weight-bold">Instruments</td>
-        <td>Vocals</td>
+        {% assign instruments = include.instruments | split: ', ' %}
+        <td>{{ instruments | join: "&middot; "}}</td>
       </tr>
       <tr>
         <td class="align-middle font-weight-bold">Associated acts</td>
-        <td><a href="poa">Pocket of Authority</a></td>
+        {% assign acts = include.acts | split: ', ' %}
+        <td>
+        {% for act in acts %}
+          <a href="/{{ act | slugify }}">{{ act }}</a>{% unless forloop.last %}<br>{% endunless %}
+        {% endfor %}
+        </td>
       </tr>
     </tbody>
   </table>
