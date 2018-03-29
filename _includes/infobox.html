@@ -51,11 +51,13 @@
       {% if include.partners %}
       <tr>
         <td class="align-middle font-weight-bold">Partner(s)</td>
-        {% assign partners = {{ include.partners }} | split: ', ' %}
-        {% for i in partners %}
-        {% assign partners[i].info = "{{ i }}" | split: '/' %}
-        <td><a href="/{{ include.partners[i].info[0] | slugify}}">{{ include.partners[i].info[0] }}</a> {{ include.partners[i].info[1] }}</td>
-        {% endfor %}
+        <td>
+          {% assign partners = {{ include.partners }} | split: ', ' %}
+          {% for i in partners %}
+            {% assign partners[i].info = "{{ i }}" | split: '/' %}
+            <a href="/{{ include.partners[i].info[0] | slugify}}">{{ include.partners[i].info[0] }}</a> {{ include.partners[i].info[1] }}
+          {% endfor %}
+        </td>
       </tr>
       {% endif %}
       {% if include.children %}
