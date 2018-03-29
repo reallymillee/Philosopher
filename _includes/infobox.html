@@ -2,7 +2,7 @@
   <table class="table table-bordered">
     <thead class="bg-info text-light text-center" style="font-size:initial">
       <tr>
-        <th colspan="2">{{ include name }}</th>
+        <th colspan="2">{{ name }}</th>
       </tr>
     </thead>
     <tbody>
@@ -16,44 +16,44 @@
       </tr>
       <tr>
         <td class="align-middle font-weight-bold">Born</td>
-        <td>{{ include fullname }}<br>{{ include birthdate }} (age {{ include age }})<br>{{ include birthplace }}</td>
+        <td>{{ fullname }}<br>{{ birthdate }} (age {{ age }})<br>{{ birthplace }}</td>
       </tr>
       {% if nationality %}
       <tr>
         <td class="align-middle font-weight-bold">Nationality</td>
-        <td>{{ include nationality }}</td>
+        <td>{{ nationality }}</td>
       </tr>
       {% endif %}
       {% if residence %}
       <tr>
         <td class="align-middle font-weight-bold">Residence</td>
-        <td>{{ include residence}}</td>
+        <td>{{ residence}}</td>
       </tr>
       {% endif %}
       {% if height %}
       <tr>
         <td class="align-middle font-weight-bold">Height</td>
-        <td>{{ include height }}</td>
+        <td>{{ height }}</td>
       </tr>
       {% endif %}
       {% if occupation %}
       <tr>
         <td class="align-middle font-weight-bold">Occupation</td>
-        <td>{{ include occupation }}</td>
+        <td>{{ occupation }}</td>
       </tr>
       {% endif %}
       {% if yearsactive %}
       <tr>
         <td class="align-middle font-weight-bold">Years active</td>
-        <td>{{ include yearsactive }}</td>
+        <td>{{ yearsactive }}</td>
       </tr>
       {% endif %}
       {% if partners %}
       <tr>
         <td class="align-middle font-weight-bold">Partner(s)</td>
         {% for partner in partners %}
-        {% assign partner[i].info = "{{ include partner }}" | split: '/' %}
-        <td><a href="/{{ include partner[i].info[0] | slugify}}">{{ include partner[i].info[0] }}</a> {{ include partner[i].info[1] }}</td>
+        {% assign partner[i].info = "{{ partner }}" | split: '/' %}
+        <td><a href="/{{ partner[i].info[0] | slugify}}">{{ partner[i].info[0] }}</a> {{ partner[i].info[1] }}</td>
         {% endfor %}
       </tr>
       {% endif %}
