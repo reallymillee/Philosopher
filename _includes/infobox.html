@@ -53,6 +53,7 @@
         <td class="align-middle font-weight-bold">Partner(s)</td>
         <td>
           {% assign partners = {{ include.partners }} | split: ', ' %}
+          {{ partners }}
           {% for i in partners %}
             {% assign partners[i].info = "{{ i }}" | split: '/' %}
             <a href="/{{ include.partners[i].info[0] | slugify}}">{{ include.partners[i].info[0] }}</a> {{ include.partners[i].info[1] }}
