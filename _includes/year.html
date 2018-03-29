@@ -1,0 +1,151 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-sm order-2 order-sm-1">
+      <p>
+        <b>{{ include.firstname }}{% if include.middlename %} {{ include.middlename }}{% endif %}{% if include.nickname %} "{{ include.nickname }}"{% endif %} {{ include.lastname}}</b> (born {{ page.birthdate | date: "%e %B %Y" }}) is a{{ content }}
+      </p>
+    </div>
+    <div class="col-sm-4 order-1 order-sm-2" style="font-size:90%;">
+      <table class="table table-bordered">
+        <thead class="bg-info text-light text-center" style="font-size:initial">
+          <tr>
+            <th colspan="2">{{ include.name }} ({{ include.year }})</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <img src="/img/{{ include.img }}.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="{{ include.name }}">
+            </td>
+          </tr>
+          <tr class="bg-info text-light text-center">
+            <th colspan="2">Biographical Information</th>
+          </tr>
+          <tr>
+            <td class="align-middle font-weight-bold">Born</td>
+            {% capture ageyear %}
+            {{ page.birthdate | date: "%Y" }}
+            {% endcapture %}
+            <td>{{ page.birthname }}<br>{{ page.birthdate | date: "%e %B %Y" }} (age {{ include.year | minus: ageyear }})<br>{{ page.birthplace }}</td>
+          </tr>
+          {% if include.nationality %}
+          <tr>
+            <td class="align-middle font-weight-bold">Nationality</td>
+            <td>{{ include.nationality }}</td>
+          </tr>
+          {% endif %}
+          {% if include.residence %}
+          <tr>
+            <td class="align-middle font-weight-bold">Residence</td>
+            <td>{{ include.residence}}</td>
+          </tr>
+          {% endif %}
+          {% if include.height %}
+          <tr>
+            <td class="align-middle font-weight-bold">Height</td>
+            <td>{{ include.height }}</td>
+          </tr>
+          {% endif %}
+          {% if include.family %}
+            <tr>
+              <td class="align-middle font-weight-bold">Family and relatives</td>
+              <td>
+                {% assign family = include.family | split: ', ' %}
+                {% for relative in family %}
+                  {% capture relativeinfo %}{{ relative }}{% endcapture %}
+                  {% assign info = relativeinfo | split: '/' %}
+                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+              </td>
+            </tr>
+          {% endif %}
+          {% if include.relations %}
+            <tr>
+              <td class="align-middle font-weight-bold">Other relations</td>
+              <td>
+                {% assign relations = include.relations | split: ', ' %}
+                {% for person in relations %}
+                  {% capture personinfo %}{{ person }}{% endcapture %}
+                  {% assign info = personinfo | split: '/' %}
+                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+              </td>
+            </tr>
+          {% endif %}
+          {% if include.occupation %}
+          <tr>
+            <td class="align-middle font-weight-bold">Occupation</td>
+            <td>{{ include.occupation }}</td>
+          </tr>
+          {% endif %}
+          {% if include.yearsactive %}
+          <tr>
+            <td class="align-middle font-weight-bold">Years active</td>
+            <td>{{ include.yearsactive }}</td>
+          </tr>
+          {% endif %}
+          {% if include.spouses %}
+            <tr>
+              <td class="align-middle font-weight-bold">Spouse(s)</td>
+              <td>
+                {% assign spouses = include.spouses | split: ', ' %}
+                {% for i in spouses %}
+                  {% capture spouseinfo %}{{ i }}{% endcapture %}
+                  {% assign info = spouseinfo | split: '/' %}
+                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+              </td>
+            </tr>
+          {% endif %}
+          {% if include.partners %}
+            <tr>
+              <td class="align-middle font-weight-bold">Partner(s)</td>
+              <td>
+                {% assign partners = include.partners | split: ', ' %}
+                {% for i in partners %}
+                  {% capture partnerinfo %}{{ i }}{% endcapture %}
+                  {% assign info = partnerinfo | split: '/' %}
+                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+              </td>
+            </tr>
+          {% endif %}
+          {% if include.children %}
+            {% assign children = include.children | split: ', ' %}
+          <tr>
+            <td class="align-middle font-weight-bold">Children</td>
+            <td>
+              {% for child in children %}
+                <a href="/{{ child | slugify }}">{{ child }}</a>{% unless forloop.last %}<br>{% endunless %}
+              {% endfor %}
+          </td>
+          </tr>
+          {% endif %}
+          {% if include.genres %}
+          <tr class="bg-info text-light text-center">
+            <th colspan="2">Musical Career</th>
+          </tr>
+          <tr>
+            <td class="align-middle font-weight-bold">Genres</td>
+            {% assign genres = include.genres | split: ', ' %}
+            <td>{{ genres | join: " &middot; "}}</td>
+          </tr>
+          <tr>
+            <td class="align-middle font-weight-bold">Instruments</td>
+            {% assign instruments = include.instruments | split: ', ' %}
+            <td>{{ instruments | join: " &middot; "}}</td>
+          </tr>
+          <tr>
+            <td class="align-middle font-weight-bold">Associated acts</td>
+            {% assign acts = include.acts | split: ', ' %}
+            <td>
+            {% for act in acts %}
+              <a href="/{{ act | slugify }}">{{ act }}</a>{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
+            </td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+  </div>
