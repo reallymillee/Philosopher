@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm order-2 order-sm-1">
       <p>
-        <b>{{ include.firstname }}{% if include.middlename %} {{ include.middlename }}{% endif %}{% if include.nickname %} "{{ include.nickname }}"{% endif %} {{ include.lastname}}</b> (born {{ page.birthdate | date: "%e %B %Y" }}) is a{{ content }}
+        <b>{{ include.firstname }}{% if include.middlename %} {{ include.middlename }}{% endif %}{% if include.nickname %} "{{ include.nickname }}"{% endif %} {{ include.lastname}}</b> (born {{ page.birthdate | date: "%e %B %Y" }}) is a{{ include.bio }}
       </p>
     </div>
     <div class="col-sm-4 order-1 order-sm-2" style="font-size:90%;">
