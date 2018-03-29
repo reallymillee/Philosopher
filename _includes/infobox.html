@@ -36,6 +36,32 @@
         <td>{{ include.height }}</td>
       </tr>
       {% endif %}
+      {% if include.family %}
+        <tr>
+          <td class="align-middle font-weight-bold">Family and relatives</td>
+          <td>
+            {% assign family = include.family | split: ', ' %}
+            {% for relative in family %}
+              {% capture relativeinfo %}{{ relative }}{% endcapture %}
+              {% assign info = relativeinfo | split: '/' %}
+              <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
+          </td>
+        </tr>
+      {% endif %}
+      {% if include.relations %}
+        <tr>
+          <td class="align-middle font-weight-bold">Other relations</td>
+          <td>
+            {% assign relations = include.relations | split: ', ' %}
+            {% for person in relations %}
+              {% capture personinfo %}{{ person }}{% endcapture %}
+              {% assign info = personinfo | split: '/' %}
+              <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
+          </td>
+        </tr>
+      {% endif %}
       {% if include.occupation %}
       <tr>
         <td class="align-middle font-weight-bold">Occupation</td>
@@ -47,6 +73,19 @@
         <td class="align-middle font-weight-bold">Years active</td>
         <td>{{ include.yearsactive }}</td>
       </tr>
+      {% endif %}
+      {% if include.spouses %}
+        <tr>
+          <td class="align-middle font-weight-bold">Spouse(s)</td>
+          <td>
+            {% assign spouses = include.spouses | split: ', ' %}
+            {% for i in spouses %}
+              {% capture spouseinfo %}{{ i }}{% endcapture %}
+              {% assign info = spouseinfo | split: '/' %}
+              <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
+          </td>
+        </tr>
       {% endif %}
       {% if include.partners %}
         <tr>
@@ -80,12 +119,12 @@
       <tr>
         <td class="align-middle font-weight-bold">Genres</td>
         {% assign genres = include.genres | split: ', ' %}
-        <td>{{ genres | join: "&middot; "}}</td>
+        <td>{{ genres | join: " &middot; "}}</td>
       </tr>
       <tr>
         <td class="align-middle font-weight-bold">Instruments</td>
         {% assign instruments = include.instruments | split: ', ' %}
-        <td>{{ instruments | join: "&middot; "}}</td>
+        <td>{{ instruments | join: " &middot; "}}</td>
       </tr>
       <tr>
         <td class="align-middle font-weight-bold">Associated acts</td>
