@@ -55,7 +55,7 @@ layout: default
                 {% for relative in family %}
                   {% capture relativeinfo %}{{ relative }}{% endcapture %}
                   {% assign info = relativeinfo | split: '/' %}
-                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
@@ -68,7 +68,7 @@ layout: default
                 {% for person in relations %}
                   {% capture personinfo %}{{ person }}{% endcapture %}
                   {% assign info = personinfo | split: '/' %}
-                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
@@ -93,7 +93,7 @@ layout: default
                 {% for i in spouses %}
                   {% capture spouseinfo %}{{ i }}{% endcapture %}
                   {% assign info = spouseinfo | split: '/' %}
-                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
+                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
@@ -106,7 +106,7 @@ layout: default
                 {% for i in partners %}
                   {% capture partnerinfo %}{{ i }}{% endcapture %}
                   {% assign info = partnerinfo | split: '/' %}
-                  <a href="/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
+                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
@@ -117,7 +117,7 @@ layout: default
             <td class="align-middle font-weight-bold">Children</td>
             <td>
               {% for child in children %}
-                <a href="/{{ child | slugify }}">{{ child }}</a>{% unless forloop.last %}<br>{% endunless %}
+                <a href="/wiki/{{ child | slugify }}">{{ child }}</a>{% unless forloop.last %}<br>{% endunless %}
               {% endfor %}
           </td>
           </tr>
@@ -141,7 +141,7 @@ layout: default
             {% assign acts = page.acts | split: ', ' %}
             <td>
             {% for act in acts %}
-              <a href="/{{ act | slugify }}">{{ act }}</a>{% unless forloop.last %}<br>{% endunless %}
+              <a href="/wiki/{{ act | slugify }}">{{ act }}</a>{% unless forloop.last %}<br>{% endunless %}
             {% endfor %}
             </td>
           </tr>
