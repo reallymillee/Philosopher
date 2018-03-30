@@ -90,7 +90,7 @@ layout: default
                 {% assign spouses = page.spouses | split: ', ' %}
                 {% for spouse in spouses %}
                   {% assign spouseinfo = spouse | split: '/' %}
-                  <a href="/wiki/{{ spouseinfo[0] | slugify }}">{{ spouseinfo[0] }}</a> (<abbr title="married">m.</abbr> {{ spouseinfo[1]) }}{% unless forloop.last %}<br>{% endunless %}
+                  <a href="/wiki/{{ spouseinfo[0] | slugify }}">{{ spouseinfo[0] }}</a> (<abbr title="married">m.</abbr> {{ spouseinfo[1] }}){% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
