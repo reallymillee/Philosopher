@@ -15,5 +15,6 @@ yearsactive: "2006-present"
 genres: "Pop, rock"
 instruments: "Vocals, guitar"
 acts: "Pocket of Authority"
+bio-name: "Ryan Benjamin Campbell"
+bio: "is a British/American guitarist from Reading, England."
 ---
-**Ryan Benjamin Campbell** (born {{ page.birthdate | date: "%e %B %Y" }}) is a British/American guitarist from Reading, England.

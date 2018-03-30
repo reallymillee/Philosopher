@@ -15,5 +15,6 @@ yearsactive: "2007-present"
 genres: "Pop, rock"
 instruments: "Vocals, guitar"
 acts: "Pocket of Authority"
+bio-name: 'Jackson Christopher "Jack" Campbell'
+bio: "is a British/American drummer from Reading, England."
 ---
-**Jackson Christopher "Jack" Campbell** (born {{ page.birthdate | date: "%e %B %Y" }}) is a British/American drummer from Reading, England.

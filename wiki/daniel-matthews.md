@@ -14,5 +14,6 @@ yearsactive: "2006-present"
 genres: "Pop, rock"
 instruments: "Vocals, bass"
 acts: "Pocket of Authority"
+bio-name: 'Daniel Keith "Dan" Matthews'
+bio: "is an American bassist from Baltimore, Maryland."
 ---
-**Daniel Keith "Dan" Matthews** (born {{ page.birthdate | date: "%e %B %Y" }}) is an American bassist from Baltimore, Maryland.

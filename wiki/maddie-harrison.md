@@ -8,5 +8,6 @@ img: "maddie-1"
 nationality: "American"
 residence: "Baltimore, Maryland"
 family: "Carter Harrison/(biological father), Jon Harthford/(adoptive father), Rachel Barns/(biological mother)"
+bio-name: 'Madelyn Harper "Maddie" Harrison'
+bio: "is an American from Baltimore, Maryland."
 ---
-**Madelyn Harper "Maddie" Harrison** (born {{ page.birthdate | date: "%e %B %Y" }}) is an American from Baltimore, Maryland.

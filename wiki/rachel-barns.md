@@ -9,5 +9,6 @@ nationality: "American"
 residence: "Baltimore, Maryland"
 partners: "Carter Harrison/(2003-2006)"
 children: "Maddie Harrison/(biological; non-custodial)"
+bio-name: "Rachel Nicole Barns"
+bio: "is an American from Baltimore, Maryland."
 ---
-**Rachel Nicole Barns** (born {{ page.birthdate | date: "%e %B %Y" }}) is an American from Baltimore, Maryland.

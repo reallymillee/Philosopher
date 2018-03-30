@@ -9,15 +9,16 @@ nationality: "American"
 residence: "Baltimore, Maryland"
 height: "6 ft 1 in (1.85 m)"
 relations: "Ryan Campbell/(bandmate), Daniel Matthews/(bandmate), Jack Campbell/(bandmate)"
-partners: "Carter Harrison/(2006-present)"
+spouses: "Carter Harrison/2013"
 children: "Maddie Harrison/(adopted)"
 occupation: "Singer"
 yearsactive: "2006-present"
 genres: "Pop, rock"
 instruments: "Vocals"
 acts: "Pocket of Authority"
+bio-name: 'Jonathan "Jon" Harthford'
+bio: "is an American lead vocalist from Baltimore, Maryland."
 ---
-**Jonathan "Jon" Harthford** (born {{ page.birthdate | date: "%e %B %Y" }}) is an American lead vocalist from Baltimore, Maryland.
 -   [2012](#2012)
     -   [November 8](#november-8)
 

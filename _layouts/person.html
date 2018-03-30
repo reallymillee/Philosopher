@@ -1,12 +1,14 @@
 ---
 layout: default
+toc: true
 ---
 <div class="container">
   <br>
   <div class="row">
     <div class="col-sm order-2 order-sm-1">
       <h1>{{ page.title }}</h1><hr>
-      {{ content }}
+      <b>{{ page.bio-name }}</b> (born {{ page.birthdate | date: "%e %B %Y" }}) {{ page.bio }}
+      {{ content | toc }}
     </div>
     <div class="col-sm-4 order-1 order-sm-2" style="font-size:85%;">
       <table class="table table-bordered">
