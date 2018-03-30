@@ -1,23 +1,24 @@
+---
+layout: default
+---
 <div class="container">
   <br>
   <div class="row">
     <div class="col-sm order-2 order-sm-1">
-      <h3>{{ include.year }}</h3><hr>
-      <p>
-        <b>{{ include.firstname }}{% if include.middlename %} {{ include.middlename }}{% endif %}{% if include.nickname %} "{{ include.nickname }}"{% endif %} {{ include.lastname}}</b> (born {{ page.birthdate | date: "%e %B %Y" }}) is {{ include.bio }}
-      </p>
+    <h1>{{ title }}
+    {{ content }}
     </div>
     <div class="col-sm-4 order-1 order-sm-2" style="font-size:90%;">
       <table class="table table-bordered">
         <thead class="bg-info text-light text-center" style="font-size:initial">
           <tr>
-            <th colspan="2">{% if page.name %}{{ page.name }}{% else %}{{ include.name }}{% endif %} ({{ include.year }})</th>
+            <th colspan="2">{{ page.title }}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td colspan="2">
-              <img src="/img/{{ include.img }}.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="{{ include.name }}">
+              <img src="/img/{{ page.img }}.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="{{ title }}">
             </td>
           </tr>
           <tr class="bg-info text-light text-center">
@@ -25,34 +26,32 @@
           </tr>
           <tr>
             <td class="align-middle font-weight-bold">Born</td>
-            {% capture ageyear %}
-            {{ page.birthdate | date: "%Y" }}
-            {% endcapture %}
-            <td>{{ page.birthname }}<br>{{ page.birthdate | date: "%e %B %Y" }} (age {{ include.year | minus: ageyear }})<br>{{ page.birthplace }}</td>
+            {% capture ageyear %}{{ page.birthdate | date: "%Y" }}{% endcapture %}
+            <td>{{ page.birthname }}<br>{{ page.birthdate | date: "%e %B %Y" }} (age {{ 2013 | minus: ageyear }})<br>{{ page.birthplace }}</td>
           </tr>
-          {% if include.nationality %}
+          {% if page.nationality %}
           <tr>
             <td class="align-middle font-weight-bold">Nationality</td>
-            <td>{{ include.nationality }}</td>
+            <td>{{ page.nationality }}</td>
           </tr>
           {% endif %}
-          {% if include.residence %}
+          {% if page.residence %}
           <tr>
             <td class="align-middle font-weight-bold">Residence</td>
-            <td>{{ include.residence}}</td>
+            <td>{{ page.residence}}</td>
           </tr>
           {% endif %}
-          {% if include.height %}
+          {% if page.height %}
           <tr>
             <td class="align-middle font-weight-bold">Height</td>
-            <td>{{ include.height }}</td>
+            <td>{{ page.height }}</td>
           </tr>
           {% endif %}
-          {% if include.family %}
+          {% if page.family %}
             <tr>
               <td class="align-middle font-weight-bold">Family and relatives</td>
               <td>
-                {% assign family = include.family | split: ', ' %}
+                {% assign family = page.family | split: ', ' %}
                 {% for relative in family %}
                   {% capture relativeinfo %}{{ relative }}{% endcapture %}
                   {% assign info = relativeinfo | split: '/' %}
@@ -61,11 +60,11 @@
               </td>
             </tr>
           {% endif %}
-          {% if include.relations %}
+          {% if page.relations %}
             <tr>
               <td class="align-middle font-weight-bold">Other relations</td>
               <td>
-                {% assign relations = include.relations | split: ', ' %}
+                {% assign relations = page.relations | split: ', ' %}
                 {% for person in relations %}
                   {% capture personinfo %}{{ person }}{% endcapture %}
                   {% assign info = personinfo | split: '/' %}
@@ -74,23 +73,23 @@
               </td>
             </tr>
           {% endif %}
-          {% if include.occupation %}
+          {% if page.occupation %}
           <tr>
             <td class="align-middle font-weight-bold">Occupation</td>
-            <td>{{ include.occupation }}</td>
+            <td>{{ page.occupation }}</td>
           </tr>
           {% endif %}
-          {% if include.yearsactive %}
+          {% if page.yearsactive %}
           <tr>
             <td class="align-middle font-weight-bold">Years active</td>
-            <td>{{ include.yearsactive }}</td>
+            <td>{{ page.yearsactive }}</td>
           </tr>
           {% endif %}
-          {% if include.spouses %}
+          {% if page.spouses %}
             <tr>
               <td class="align-middle font-weight-bold">Spouse(s)</td>
               <td>
-                {% assign spouses = include.spouses | split: ', ' %}
+                {% assign spouses = page.spouses | split: ', ' %}
                 {% for i in spouses %}
                   {% capture spouseinfo %}{{ i }}{% endcapture %}
                   {% assign info = spouseinfo | split: '/' %}
@@ -99,11 +98,11 @@
               </td>
             </tr>
           {% endif %}
-          {% if include.partners %}
+          {% if page.partners %}
             <tr>
               <td class="align-middle font-weight-bold">Partner(s)</td>
               <td>
-                {% assign partners = include.partners | split: ', ' %}
+                {% assign partners = page.partners | split: ', ' %}
                 {% for i in partners %}
                   {% capture partnerinfo %}{{ i }}{% endcapture %}
                   {% assign info = partnerinfo | split: '/' %}
@@ -112,8 +111,8 @@
               </td>
             </tr>
           {% endif %}
-          {% if include.children %}
-            {% assign children = include.children | split: ', ' %}
+          {% if page.children %}
+            {% assign children = page.children | split: ', ' %}
           <tr>
             <td class="align-middle font-weight-bold">Children</td>
             <td>
@@ -123,23 +122,23 @@
           </td>
           </tr>
           {% endif %}
-          {% if include.genres %}
+          {% if page.genres %}
           <tr class="bg-info text-light text-center">
             <th colspan="2">Musical Career</th>
           </tr>
           <tr>
             <td class="align-middle font-weight-bold">Genres</td>
-            {% assign genres = include.genres | split: ', ' %}
+            {% assign genres = page.genres | split: ', ' %}
             <td>{{ genres | join: " &middot; "}}</td>
           </tr>
           <tr>
             <td class="align-middle font-weight-bold">Instruments</td>
-            {% assign instruments = include.instruments | split: ', ' %}
+            {% assign instruments = page.instruments | split: ', ' %}
             <td>{{ instruments | join: " &middot; "}}</td>
           </tr>
           <tr>
             <td class="align-middle font-weight-bold">Associated acts</td>
-            {% assign acts = include.acts | split: ', ' %}
+            {% assign acts = page.acts | split: ', ' %}
             <td>
             {% for act in acts %}
               <a href="/{{ act | slugify }}">{{ act }}</a>{% unless forloop.last %}<br>{% endunless %}
