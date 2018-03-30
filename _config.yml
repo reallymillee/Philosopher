@@ -2,3 +2,5 @@ collections:
   wiki:
     output: true
     permalink: /wiki/:title
+plugins:
+  - jekyll-toc
