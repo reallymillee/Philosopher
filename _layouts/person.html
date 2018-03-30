@@ -5,10 +5,10 @@ layout: default
   <br>
   <div class="row">
     <div class="col-sm order-2 order-sm-1">
-    <h1>{{ title }}
-    {{ content }}
+      <h1>{{ title }}</h1>
+      {{ content }}
     </div>
-    <div class="col-sm-4 order-1 order-sm-2" style="font-size:90%;">
+    <div class="col-sm-4 order-1 order-sm-2" style="font-size:85%;">
       <table class="table table-bordered">
         <thead class="bg-info text-light text-center" style="font-size:initial">
           <tr>
@@ -27,7 +27,7 @@ layout: default
           <tr>
             <td class="align-middle font-weight-bold">Born</td>
             {% capture ageyear %}{{ page.birthdate | date: "%Y" }}{% endcapture %}
-            <td>{{ page.birthname }}<br>{{ page.birthdate | date: "%e %B %Y" }} (age {{ 2013 | minus: ageyear }})<br>{{ page.birthplace }}</td>
+            <td class="col-1">{{ page.birthname }}<br>{{ page.birthdate | date: "%e %B %Y" }} (age {{ 2013 | minus: ageyear }})<br>{{ page.birthplace }}</td>
           </tr>
           {% if page.nationality %}
           <tr>

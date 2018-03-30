@@ -4,7 +4,7 @@ title: "Carter Harrison"
 birthname: "Carter James Harrison"
 birthdate: 5/11/1987
 birthplace: "Baltimore, Maryland"
-img: "carter-2"
+img: "carter-1"
 nationality: "American"
 residence: "Baltimore, Maryland"
 height: "6 ft 2 in (1.89 m)"
