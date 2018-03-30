@@ -17,7 +17,7 @@ genres: "Pop, rock"
 instruments: "Vocals"
 acts: "Pocket of Authority"
 ---
-**Jonathan "Jon" Harthford** is an American lead vocalist from Baltimore, Maryland.
+**Jonathan "Jon" Harthford** (born {{ page.birthdate | date: "%e %B %Y" }}) is an American lead vocalist from Baltimore, Maryland.
 -   [2012](#2012)
     -   [November 8](#november-8)
 
