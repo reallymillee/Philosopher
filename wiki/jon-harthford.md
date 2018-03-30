@@ -18,6 +18,9 @@ instruments: "Vocals"
 acts: "Pocket of Authority"
 ---
 **Jonathan "Jon" Harthford** is an American lead vocalist from Baltimore, Maryland.
+-   [2012](#2012)
+    -   [November 8](#november-8)
+
 ## 2012
 ### November 8
 Jon was stopped by reporters who enquired about the success of the band's album and then about his opinion on the recent referendum.
