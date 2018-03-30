@@ -53,9 +53,8 @@ layout: default
               <td>
                 {% assign family = page.family | split: ', ' %}
                 {% for relative in family %}
-                  {% capture relativeinfo %}{{ relative }}{% endcapture %}
-                  {% assign info = relativeinfo | split: '/' %}
-                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+                  {% assign relativeinfo = relative | split: '/' %}
+                  <a href="/wiki/{{ relativeinfo[0] | slugify }}">{{ relativeinfo[0] }}</a> <small>{{ relativeinfo[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
@@ -66,9 +65,8 @@ layout: default
               <td>
                 {% assign relations = page.relations | split: ', ' %}
                 {% for person in relations %}
-                  {% capture personinfo %}{{ person }}{% endcapture %}
-                  {% assign info = personinfo | split: '/' %}
-                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> <small>{{ info[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
+                  {% assign personinfo = person | split: '/' %}
+                  <a href="/wiki/{{ personinfo[0] | slugify }}">{{ personinfo[0] }}</a> <small>{{ personinfo[1] }}</small>{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
@@ -90,10 +88,9 @@ layout: default
               <td class="align-middle font-weight-bold">Spouse(s)</td>
               <td>
                 {% assign spouses = page.spouses | split: ', ' %}
-                {% for i in spouses %}
-                  {% capture spouseinfo %}{{ i }}{% endcapture %}
-                  {% assign info = spouseinfo | split: '/' %}
-                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
+                {% for spouse in spouses %}
+                  {% assign spouseinfo = spouse | split: '/' %}
+                  <a href="/wiki/{{ spouseinfo[0] | slugify }}">{{ spouseinfo[0] }}</a> {{ spouseinfo[1] }}{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
@@ -103,24 +100,24 @@ layout: default
               <td class="align-middle font-weight-bold">Partner(s)</td>
               <td>
                 {% assign partners = page.partners | split: ', ' %}
-                {% for i in partners %}
-                  {% capture partnerinfo %}{{ i }}{% endcapture %}
-                  {% assign info = partnerinfo | split: '/' %}
-                  <a href="/wiki/{{ info[0] | slugify }}">{{ info[0] }}</a> {{ info[1] }}{% unless forloop.last %}<br>{% endunless %}
+                {% for partner in partners %}
+                  {% assign partnerinfo = partner | split: '/' %}
+                  <a href="/wiki/{{ partnerinfo[0] | slugify }}">{{ partnerinfo[0] }}</a> {{ partnerinfo[1] }}{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
               </td>
             </tr>
           {% endif %}
           {% if page.children %}
-            {% assign children = page.children | split: ', ' %}
-          <tr>
-            <td class="align-middle font-weight-bold">Children</td>
-            <td>
-              {% for child in children %}
-                <a href="/wiki/{{ child | slugify }}">{{ child }}</a>{% unless forloop.last %}<br>{% endunless %}
-              {% endfor %}
-          </td>
-          </tr>
+            <tr>
+              <td class="align-middle font-weight-bold">Children</td>
+              <td>
+                {% assign children = page.children | split: ', ' %}
+                {% for child in partners %}
+                  {% assign childinfo = child | split: '/' %}
+                  <a href="/wiki/{{ childinfo[0] | slugify }}">{{ childinfo[0] }}</a> {{ childinfo[1] }}{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+              </td>
+            </tr>
           {% endif %}
           {% if page.genres %}
           <tr class="bg-info text-light text-center">
