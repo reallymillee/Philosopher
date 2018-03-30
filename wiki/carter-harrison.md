@@ -12,7 +12,7 @@ family: "Thomas Harrison/(father), Lizzie Harrison/(mother), Ashley Harrison/(yo
 relations: "Matthew Everett/(best friend; deceased), Ryan Campbell/(bandmate), Daniel Matthews/(bandmate), Jack Campbell/(bandmate)"
 spouses: "Jon Harthford/2013"
 partners: "Rachel Barns/(2003-2006)"
-children: "Maddie Harrison"
+children: "Maddie Harrison/(biological)"
 occupation: "Singer, songwriter"
 yearsactive: "2008-present"
 genres: "Pop, rock"

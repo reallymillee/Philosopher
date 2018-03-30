@@ -112,7 +112,7 @@ layout: default
               <td class="align-middle font-weight-bold">Children</td>
               <td>
                 {% assign children = page.children | split: ', ' %}
-                {% for child in partners %}
+                {% for child in children %}
                   {% assign childinfo = child | split: '/' %}
                   <a href="/wiki/{{ childinfo[0] | slugify }}">{{ childinfo[0] }}</a> {{ childinfo[1] }}{% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
