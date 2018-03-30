@@ -18,6 +18,6 @@ yearsactive: "2008-present"
 genres: "Pop, rock"
 instruments: "Vocals"
 acts: "Pocket of Authority"
-bio-name: "Carter James "Philosopher" Harrison"
+bio-name: 'Carter James "Philosopher" Harrison'
 bio: "is an American lead vocalist and songwriter from Baltimore, Maryland."
 ---
