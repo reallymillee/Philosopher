@@ -1,24 +1,13 @@
 ---
 layout: default
-toc: true
 ---
-<style>
-.section-nav {
-  background-color: #FFF;
-  margin: 5px 0;
-  padding: 10px 30px;
-  border: 1px solid #E8E8E8;
-  border-radius: 3px;
-}
-</style>
 <div class="container">
   <br>
   <div class="row">
     <div class="col-sm order-2 order-sm-1">
       <h1>{{ page.title }}</h1><hr>
       <b>{{ page.bio-name }}</b> (born {{ page.birthdate | date: "%e %B %Y" }}) {{ page.bio }}
-      {{ content | toc_only }}
-      {{ content }}
+      {{ content | toc_generate }}
     </div>
     <div class="col-sm-4 order-1 order-sm-2" style="font-size:85%;">
       <table class="table table-bordered">
