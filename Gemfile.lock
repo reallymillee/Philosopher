@@ -61,6 +61,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  nokogiri
 
 BUNDLED WITH
    1.16.1
